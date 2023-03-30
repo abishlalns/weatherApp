@@ -1,0 +1,409 @@
+@import url(./assets/files/vars.css);
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+/* section 1 */
+.current_weather {
+  animation: clouds_flowing 10s infinite reverse;
+  background-image: url("./assets/General_Images_&_Icons/background.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  display: grid;
+  grid-template-columns: 10% 20% 15% 15% 40%;
+  padding: 20px 30px 50px 30px;
+}
+/* animation for clouds */
+@keyframes clouds_flowing {
+  0% {
+    background-position: top;
+  }
+  33% {
+    background-position: middle;
+  }
+  66% {
+    background-position: bottom;
+  }
+  100% {
+    background-position: top;
+  }
+}
+.column1,
+.column3,
+.column4,
+.column5 {
+  margin-right: 10px;
+}
+.column5 {
+  margin-left: 10px;
+}
+/* grid 1 */
+.city_image img {
+  height: 90px;
+}
+h1 {
+  font-size: 15px;
+}
+/* grid 2 */
+.city .input_cities {
+  background: var(--bg-input-box);
+  border: none;
+  color: var(--primary-white);
+  font-size: 16px;
+  height: 30px;
+  margin-top: 20px;
+  padding: 5px;
+  width: 100%;
+}
+.city .warning {
+  background-color: var(--bg-input-box-error);
+  border: 3px solid var(--bright-red-border);
+}
+datalist option {
+  background-color: red;
+  font-size: 16px;
+  padding: 5px;
+}
+.timestamp .time {
+  align-items: flex-end;
+  display: flex;
+}
+.timestamp .time h1 {
+  color: var(--pale-yellow-text);
+  font-size: 22px;
+  margin-top: 5px;
+}
+.timestamp .time h1 span {
+  color: var(--pale-yellow-text);
+  font-size: 17px;
+  margin-top: 5px;
+}
+.timestamp .time img {
+  height: 45px;
+  padding: 5px 5px 0px 5px;
+}
+.timestamp .date h1 {
+  color: var(--primary-white);
+  font-size: 18px;
+  padding-top: 5px;
+}
+/* grid 3 & 4 */
+.title {
+  color: #cfcece;
+  font-size: 18px;
+  padding-top: 10px;
+}
+.value {
+  color: var(--primary-white);
+  font-size: 23px;
+  padding-top: 8px;
+}
+.value span {
+  color: #dfdada;
+}
+.temp_celsius,
+.temp_fahrenheit {
+  border-right: 1px solid white;
+  margin-top: 8px;
+  padding-right: 10px;
+  text-align: right;
+}
+.humidity,
+.precipitation {
+  margin-top: 9px;
+}
+/* grid 5 */
+.hours,
+.clouds,
+.temp {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+.clouds img {
+  height: 28px;
+}
+.line {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 0px 20px;
+}
+.line div {
+  background-color: #ffff;
+  height: 20px;
+  width: 5px;
+}
+.temp {
+  padding: 15px 0px;
+}
+/* section 2 */
+/* top section */
+.cities_weather {
+  background-color: var(--primary-black);
+  border-radius: 20px 20px 0px 0px;
+  color: white;
+  margin-top: -20px;
+  padding: 20px 50px;
+}
+.cities_weather .top_cities {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0px 30px;
+  position: sticky;
+}
+.cities_weather .top_cities .heading {
+  align-self: center;
+  margin-right: 25%;
+}
+.top_cities .heading h1 {
+  font-size: 20px;
+}
+.top_cities .icons {
+  align-items: center;
+  display: flex;
+}
+.top_cities .icons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding-bottom: 5px;
+}
+.icons button img {
+  height: 25px;
+  padding-top: 10px;
+}
+.top_cities .icons h3 {
+  font-size: 15px;
+  padding: 0px 10px 0px 15px;
+}
+.top_cities .icons input {
+  background: var(--bg-input-box);
+  border: none;
+  color: var(--primary-white);
+  width: 25px;
+}
+.top_cities .icons button.active {
+  border-bottom: 2px var(--light-blue-border) solid;
+}
+/* city cards */
+.cities_weather {
+  position: relative;
+}
+.cities_weather .citi_cards {
+  display: flex;
+  gap: 65px;
+  justify-content: center;
+  margin-top: 10px;
+  scroll-behavior: smooth;
+}
+.cities_weather .left_arrow,
+.cities_weather .right_arrow {
+  background-color: #fff;
+  background-color: #fff;
+  border-radius: 50%;
+  color: #000;
+  cursor: pointer;
+  padding: 10px 13px;
+  position: absolute;
+  text-align: center;
+  top: 150px;
+}
+.cities_weather .left_arrow {
+  left: 10px;
+}
+.cities_weather .right_arrow {
+  right: 10px;
+}
+.citi_cards::-webkit-scrollbar,
+.citi_cards::-webkit-scrollbar-thumb {
+  border-radius: 90px;
+}
+.citi_cards::-webkit-scrollbar {
+  background-color: #383838;
+  height: 10px;
+}
+.citi_cards::-webkit-scrollbar-thumb {
+  background-color: var(--bg-input-box);
+}
+/* single card  */
+.citi_cards {
+  padding: 0px 20px;
+}
+.cities_weather .citi_cards .single_card {
+  background-color: var(--bg-dark-grey-tile);
+  box-shadow: 5px 5px 5px var(--bg-input-box);
+  display: flex;
+  margin: 25px 10px;
+  padding: 15px 0px 5px 15px;
+  transition: transform 1s;
+}
+.citi_cards .single_card:hover.single_card {
+  transform: scale(1.1);
+}
+.citi_cards .left_col {
+  min-width: 100px;
+  padding-bottom: 30px;
+}
+.citi_cards .left_col h1 {
+  font-size: 20px;
+}
+.citi_cards .left_col h3 {
+  font-size: 15px;
+  padding-top: 8px;
+}
+.citi_cards .left_col span {
+  align-items: center;
+  display: flex;
+  font-size: 15px;
+  margin-top: 10px;
+}
+.citi_cards .left_col span img {
+  height: 15px;
+  padding-right: 10px;
+}
+.citi_cards .right_col {
+  margin-left: 25px;
+  position: relative;
+}
+.citi_cards .right_col span {
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+  justify-content: flex-end;
+  padding: 0px 10px 10px;
+}
+.citi_cards .right_col span img {
+  height: 20px;
+  padding-right: 10px;
+}
+.card_citi_image {
+  bottom: -5px;
+  height: 120px;
+  position: absolute;
+  right: 0px;
+}
+/* section 3 */
+.continents {
+  background-color: var(--primary-black);
+  color: white;
+  padding: 20px 50px;
+}
+.continents .continent_row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 30px;
+}
+.continent_row h1 {
+  font-size: 15px;
+}
+.continent_row span {
+  cursor: pointer;
+  padding-left: 10px;
+}
+.continent_row span img {
+  width: 10px;
+}
+/* card box  */
+.continent_boxes {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: 25% 25% 25% 25%;
+  margin-top: 20px;
+}
+.continent_boxes .box {
+  background-color: var(--bg-dark-grey-tile);
+  margin: 10px 20px;
+  padding: 10px;
+  transition: transform 2s;
+}
+.continent_boxes .box:hover {
+  transform: scale(1.2);
+}
+.continent_boxes .box .row1,
+.row2 {
+  display: flex;
+  justify-content: space-between;
+}
+.continent_boxes .box .row2 {
+  padding-top: 5px;
+}
+.continent_boxes .box .row1 h1 {
+  color: var(--pale-yellow-text);
+}
+.continent_boxes .box .row2 h1 {
+  align-items: center;
+  color: var(--bg-input-box);
+  display: flex;
+  font-size: 15px;
+}
+.continent_boxes .box .row2 h1 span {
+  font-size: 15px;
+}
+.continent_boxes .box .row2 span {
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+}
+.continent_boxes .box .row2 span img {
+  padding-right: 5px;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 768px) {
+  /* section 1 grid  */
+  .current_weather {
+    display: grid;
+    grid-template-columns: 20% 40% 20% 20%;
+  }
+  .column5 {
+    grid-column: 1/5;
+  }
+  /* section 1 grid ends  */
+  /* section 2 cards  */
+  .cities_weather .citi_cards {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+  /* section 3 box  */
+  .continent_boxes {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(12, 1fr);
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 768px) {
+  /* section 1 grid  */
+  .current_weather {
+    display: grid;
+    grid-template-columns: 13% 17% 15% 15% 40%;
+    padding: 20px 20px 50px 20px;
+  }
+  /* section 2 cards  */
+  .cities_weather .citi_cards {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+  /* section 3 box */
+  .continent_boxes {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(6, 1fr);
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 999px) {
+  /* section 1 grid  */
+  .current_weather {
+    display: grid;
+    grid-template-columns: 10% 20% 10% 10% 50%;
+    padding: 20px 30px 50px 30px;
+  }
+  /* section 3 box */
+  .continent_boxes {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: 25% 25% 25% 25%;
+  }
+}

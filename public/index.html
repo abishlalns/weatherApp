@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Weather</title>
+</head>
+
+<body>
+    <!-- top section -->
+    <section class="current_weather">
+        <!-- grid 1 -->
+        <div class="column1">
+            <div class="city_image">
+                <img src="./assets/Icons_for_cities/anadyr.svg" alt="Current city" id="city_img">
+            </div>
+        </div>
+        <!-- grid 2 -->
+        <div class="column2">
+            <div class="city">
+                <input type="text" class="input_cities" id="input_cities" list="citi_names" value="Anadyr">
+                <datalist id="citi_names">
+                    <option>Nagercoil</option>
+                </datalist>
+            </div>
+            <div class="timestamp">
+                <div class="time">
+                    <h1 id="time"><span></span></h1>
+                    <img id="state" src="./assets/General_Images_&_Icons/amState.svg" alt="am pm state">
+                </div>
+                <div class="date">
+                    <h1 id="date"></h1>
+                </div>
+            </div>
+        </div>
+        <!-- grid 3 -->
+        <div class="column3">
+            <div class="temp_celsius">
+                <h1 class="title">Temp &#8451</h1>
+                <h1 class="value value_celsius"></h1>
+            </div>
+            <div class="temp_fahrenheit">
+                <h1 class="title">Temp &#8457</h1>
+                <h1 class="value value_fahrenheit"></h1>
+            </div>
+        </div>
+        <!-- grid 4 -->
+        <div class="column4">
+            <div class="humidity">
+                <h1 class="title">Humidity</h1>
+                <h1 class="value value_humidity"><span>%</span></h1>
+            </div>
+            <div class="precipitation">
+                <h1 class="title">Precipitation</h1>
+                <h1 class="value value_precipitation"><span>%</span></h1>
+            </div>
+        </div>
+        <!-- grid 5 -->
+        <div class="column5">
+            <div class="hours">
+                <span></span>
+            </div>
+            <div class="line">
+                <span>|</span>
+                <span>|</span>
+                <span>|</span>
+                <span>|</span>
+                <span>|</span>
+                <span>|</span>
+                <span>|</span>
+                <span>|</span>
+                <span>|</span>
+            </div>
+            <div class="clouds">
+                <img src="" alt="Weather_Icons">
+            </div>
+            <div class="temp">
+                <span></span>
+            </div>
+        </div>
+    </section>
+    <!-- section 1 end -->
+    <!-- section 2 -->
+    <section class="cities_weather">
+        <!-- top section -->
+        <div class="top_cities">
+            <div class="heading">
+                <h1>Top cities around world</h1>
+            </div>
+            <div class="icons">
+                <button class="active" id="sunny" >
+                    <img src="./assets/Weather_Icons/sunnyIcon.svg" alt="sunnyIcon">
+                </button>
+                <button id="cold" >
+                    <img src="./assets/Weather_Icons/snowflakeIcon.svg" alt="sunnyIcon">
+                </button>
+                 <button id="rainy">
+                    <img src="./assets/Weather_Icons/rainyIcon.svg" alt="sunnyIcon">
+                </button>
+                <h3>Display Top</h3>
+                <input type="number" id="count" max="10" min="3" value="3">
+            </div>
+        </div>
+        <!-- bottom section - cards -->
+        <span class="left_arrow fa fa-chevron-left"></span>
+        <div class="citi_cards">
+            <!-- card start -->
+            <div class="single_card">
+                <div class="left_col">
+                    <h1>New Delhi</h1>
+                    <h3>10:00AM</h3>
+                    <h3>2-MAR-2023</h3>
+                    <span>
+                        <img src="./assets/Weather_Icons/humidityIcon.svg" alt="sunnyIcon">
+                        53%
+                    </span> 
+                    <span>
+                        <img src="./assets/Weather_Icons/precipitationIcon.svg" alt="sunnyIcon">
+                        10%
+                    </span>
+                </div>
+                <div class="right_col">
+                    <span>
+                        <img src="./assets/Weather_Icons/sunnyIcon.svg" alt="sunnyIcon">
+                        25 &#8451
+                    </span>
+                </div>
+            </div> 
+            <!-- card end -->
+        </div>
+        <span class="right_arrow fa fa-chevron-right"></span>
+    </section>
+    <!-- section 2 end -->
+    <!-- section 3 -->
+    <section class="continents">
+        <!-- top row -->
+        <div class="continent_row">
+            <h1>Cities across continents at a Glance</h1>
+            <div class="sorting">
+                <span class="arrow_down">
+                    Continent name
+                    <img class="arrow_down_img" src="./assets/General_Images_&_Icons/arrowDown.svg" alt="">
+                </span>
+                <span class="arrow_up">
+                    Temperature
+                    <img class="arrow_up_img" src="./assets/General_Images_&_Icons/arrowUp.svg" alt="">
+                </span>
+            </div>
+        </div>
+        <!-- box container -->
+        <div class="continent_boxes">
+            <div class="box">
+                <div class="row1">
+                    <h1>Asia</h1>
+                    <h2>30 &#8451</h2>
+                </div>
+                <div class="row2">
+                    <h1>Delhi, 10:10 AM</h1>
+                    <span>
+                        <img src="./assets/Weather_Icons/humidityIcon.svg" alt="">
+                        53%
+                    </span>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- section 3 end -->
+    <!-- script files -->
+    <script src="./script.js"></script>
+</body>
+
+</html>
